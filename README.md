@@ -4,5 +4,6 @@
     * [#3 User Log in Screen](https://youtu.be/FGxlrpti35A)
 
 ## 2022년 3월 2일
-* SIGN IN 버튼부터 화면 하단까지
+* SIGN IN 버튼부터 로그인 화면 하단까지
     * [#4 User Log in Screen](https://youtu.be/oIQgZ-WBluY)
+* 웰컴 화면 진행 중
