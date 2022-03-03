@@ -7,3 +7,7 @@
 * SIGN IN 버튼부터 로그인 화면 하단까지
     * [#4 User Log in Screen](https://youtu.be/oIQgZ-WBluY)
 * 웰컴 화면 진행 중
+
+## 2022년 3월 3일
+* 웰컴 화면
+    * [#5 Image Swiper /Carousel in Welcome Screen](https://youtu.be/_jM6Ojow6wc)
