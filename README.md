@@ -13,3 +13,6 @@
     * [#5 Image Swiper /Carousel in Welcome Screen](https://youtu.be/_jM6Ojow6wc)
 * 웰컴 화면(SignInWelcomeScreen)의 SIGN IN 버튼을 로그인 화면(SignINScreen) 화면과 연결
     * [#6 React Navigation V5 / Stack Navigator](https://youtu.be/tg8guzN0HbQ)
+
+## 2022년 3월 4일
+* 로그인시 출력되는 홈 화면 진행 중

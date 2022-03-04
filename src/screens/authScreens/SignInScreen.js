@@ -65,6 +65,9 @@ export default function SignInScreen({navigation}){
                     title = "SIGN IN"
                     buttonStyle = {parameters.StyleButton}
                     titleStyle = {parameters.buttonTitle}
+                    onPress={()=>{
+                        navigation.navigate("HomeScreen");
+                    }}
                 />
             </View>
             <View style = {{alignItems:"center", marginTop:15}}>
