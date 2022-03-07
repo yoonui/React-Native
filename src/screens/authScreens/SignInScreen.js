@@ -4,6 +4,7 @@ import {colors, parameters} from "../../global/styles";
 import {Icon, Button, SocialIcon} from 'react-native-elements';
 import Header from '../../components/Header';
 import * as Animatable from 'react-native-animatable';
+import { Formik } from 'formik';
 
 export default function SignInScreen({navigation}){
 
@@ -22,54 +23,69 @@ export default function SignInScreen({navigation}){
                 <Text style={styles.text1}>Please enter the email and password</Text>
                 <Text style={styles.text1}>registered with your account</Text>
             </View>
-            <View style={{marginTop:20}}>
+
+            <Formik
+                initialValues={{username:'', password:''}}
+                onSubmit = {(values)=>{
+                    console.log(values);
+                }}
+            >
+                { (props) =>
                 <View>
-                    <TextInput
-                        style={styles.TextInput1}
-                        placeholder="Email"
-                        ref = {textInput1}
-                    />
-                </View>
-                <View style={styles.TextInput2}>
-                    <Animatable.View animation={textInput2Fossued ? "" : "fadeInLeft"} duration = {400}>
-                        <Icon
-                            name="lock"
-                            iconStyle={{color:colors.grey3}}
-                            type="material"
-                            style={{}}
+                    <View style={{marginTop:20}}>
+                        <View>
+                            <TextInput
+                                style={styles.TextInput1}
+                                placeholder="Email"
+                                ref = {textInput1}
+                                onChangeText = {props.handleChange('username')}
+                                value = {props.values.username}
+                            />
+                        </View>
+                        <View style={styles.TextInput2}>
+                            <Animatable.View animation={textInput2Fossued ? "" : "fadeInLeft"} duration = {400}>
+                                <Icon
+                                    name="lock"
+                                    iconStyle={{color:colors.grey3}}
+                                    type="material"
+                                    style={{}}
+                                />
+                            </Animatable.View >
+                            <TextInput
+                                style={{width:"80%"}}
+                                placeholder="Password"
+                                ref = {textInput2}
+                                onFocus = {()=>{
+                                    setTextInputFossued(false);
+                                }}
+                                onBlur = {()=>{
+                                    setTextInputFossued(true);
+                                }}
+                                onChangeText = {props.handleChange('password')}
+                                value = {props.values.password}
+                            />
+                            <Animatable.View animation={textInput2Fossued ? "" : "fadeInLeft"} duration = {400}>
+                                <Icon
+                                    name="visibility-off"
+                                    iconStyle={{color:colors.grey3}}
+                                    type="material"
+                                    style={{marginRight:10}}
+                                />
+                            </Animatable.View>
+                        </View>
+                    </View>
+                    <View style = {{marginHorizontal: 20, marginTop: 30}}>
+                        <Button 
+                            title = "SIGN IN"
+                            buttonStyle = {parameters.StyleButton}
+                            titleStyle = {parameters.buttonTitle}
+                            onPress={()=>{props.handleSubmit}}
                         />
-                    </Animatable.View >
-                    <TextInput
-                        style={{width:"80%"}}
-                        placeholder="Password"
-                        ref = {textInput2}
-                        onFocus = {()=>{
-                            setTextInputFossued(false);
-                        }}
-                        onBlur = {()=>{
-                            setTextInputFossued(true);
-                        }}
-                    />
-                    <Animatable.View animation={textInput2Fossued ? "" : "fadeInLeft"} duration = {400}>
-                        <Icon
-                            name="visibility-off"
-                            iconStyle={{color:colors.grey3}}
-                            type="material"
-                            style={{marginRight:10}}
-                        />
-                    </Animatable.View>
+                    </View>
                 </View>
-            </View>
-            <View style = {{marginHorizontal: 20, marginTop: 30}}>
-                <Button 
-                    title = "SIGN IN"
-                    buttonStyle = {parameters.StyleButton}
-                    titleStyle = {parameters.buttonTitle}
-                    onPress={()=>{
-                        navigation.navigate("HomeScreen");
-                    }}
-                />
-            </View>
+                }
+            </Formik>
+
             <View style = {{alignItems:"center", marginTop:15}}>
                 <Text style={{...styles.text1, textDecorationLine:"underline"}}> Forgot Password ? </Text>
             </View>
