@@ -20,3 +20,4 @@
 ## 2022년 3월 7일
 * 홈 화면의 헤더
     * [#7 Home Screen](https://youtu.be/vINn-_948fc)
+* 사용자 인증 진행 중
